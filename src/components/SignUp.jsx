@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, useFormik } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 
   
@@ -12,64 +12,67 @@ const validateSchema = Yup.object().shape({
 
 const SignUp = () => {
 
-  const formik = useFormik({
-    initialValues:{
-      firstName:'',
-      lastName:'',
-      email:'',
-      password:'',
-    },
-    onSubmit:values=>{
-      console.log(values)
-    },
-    validationSchema:validateSchema
-  });
+  const initialValues = {
+    firstName:'',
+    lastName:'',
+    email:'',
+    password:'',
+  }
+
+  const handleSubmit= values=>{
+    console.log(values)
+  }
+   
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="firstName">First Name</label>
+    <Formik 
+    initialValues={initialValues}
+    onSubmit={handleSubmit}
+    validationSchema={validateSchema}>
+      <Form>
+        <label htmlFor="firstName">First Name</label>
 
-      <input 
-        type="text" 
-        name='firstName'
-        {...formik.getFieldProps("firstName")}
+        <input 
+          type="text" 
+          name='firstName'
+          {...formik.getFieldProps("firstName")}
+          />
+
+        {formik.touched.firstName && formik.errors.firstName && <div className='error'>{formik.errors.firstName}</div>}
+
+        <label htmlFor="lastName">Last Name</label>
+
+        <input 
+          type="text" 
+          name='lastName'
+          {...formik.getFieldProps("lastName")}
         />
 
-      {formik.touched.firstName && formik.errors.firstName && <div className='error'>{formik.errors.firstName}</div>}
+        {formik.touched.lastName && formik.errors.lastName && <div className='error'>{formik.errors.lastName}</div>}
 
-      <label htmlFor="lastName">Last Name</label>
+        <label htmlFor="email">Email</label>
 
-      <input 
-        type="text" 
-        name='lastName'
-        {...formik.getFieldProps("lastName")}
-        />
-
-      {formik.touched.lastName && formik.errors.lastName && <div className='error'>{formik.errors.lastName}</div>}
-      
-      <label htmlFor="email">Email</label>
-
-      <input 
-        type="email" 
-        name='email'
-        {...formik.getFieldProps("lastName")}
-
+        <input 
+          type="email" 
+          name='email'
+          {...formik.getFieldProps("lastName")}
         />
 
         {formik.touched.email && formik.errors.email && <div className='error'>{formik.errors.email}</div>}
-        
-      <label htmlFor="password">Password</label>
-      
-      <input 
-        type="password" 
-        name='password'
-        {...formik.getFieldProps("password")}
+          
+        <label htmlFor="password">Password</label>
+
+        <input 
+          type="password" 
+          name='password'
+          {...formik.getFieldProps("password")}
         />
 
         {formik.touched.password && formik.errors.password && <div className='error'>{formik.errors.password}</div>}
-        
-      <button type='submit'>submit</button>
-    </form>
+          
+        <button type='submit'>submit</button>
+      </Form>
+    </Formik>
   )
 }
 
