@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup'
 
   
@@ -31,44 +31,33 @@ const SignUp = () => {
     validationSchema={validateSchema}>
       <Form>
         <label htmlFor="firstName">First Name</label>
-
-        <input 
+        <Field 
           type="text" 
           name='firstName'
-          {...formik.getFieldProps("firstName")}
           />
-
-        {formik.touched.firstName && formik.errors.firstName && <div className='error'>{formik.errors.firstName}</div>}
+        <ErrorMessage name='firstName'/>
 
         <label htmlFor="lastName">Last Name</label>
-
-        <input 
+        <Field 
           type="text" 
           name='lastName'
-          {...formik.getFieldProps("lastName")}
         />
-
-        {formik.touched.lastName && formik.errors.lastName && <div className='error'>{formik.errors.lastName}</div>}
+        <ErrorMessage name='lastName'/>
 
         <label htmlFor="email">Email</label>
-
-        <input 
+        <Field 
           type="email" 
           name='email'
-          {...formik.getFieldProps("lastName")}
         />
-
-        {formik.touched.email && formik.errors.email && <div className='error'>{formik.errors.email}</div>}
+        <ErrorMessage name='email'/>
           
         <label htmlFor="password">Password</label>
 
-        <input 
+        <Field 
           type="password" 
           name='password'
-          {...formik.getFieldProps("password")}
         />
-
-        {formik.touched.password && formik.errors.password && <div className='error'>{formik.errors.password}</div>}
+        <ErrorMessage name='password'/>
           
         <button type='submit'>submit</button>
       </Form>

@@ -19,6 +19,7 @@ button{
   border-radius: .3rem;
   color: white;
   cursor: pointer;
+  display: block;
 }
 
 input{
