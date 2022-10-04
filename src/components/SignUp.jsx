@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import TextError from './TextError';
-
   
 const validateSchema = Yup.object().shape({
   firstName:Yup.string().required('Name is required').min(2,'Name should contained 2 or more characters'),
@@ -24,7 +23,6 @@ const SignUp = () => {
     console.log(values)
   }
    
-
   return (
     <Formik 
     initialValues={initialValues}
