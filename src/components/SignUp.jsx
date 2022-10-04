@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import * as Yup from 'yup'
+import * as Yup from 'yup';
+import TextError from './TextError';
 
   
 const validateSchema = Yup.object().shape({
@@ -35,21 +36,21 @@ const SignUp = () => {
           type="text" 
           name='firstName'
           />
-        <ErrorMessage name='firstName'/>
+        <ErrorMessage component={TextError} name='firstName'/>
 
         <label htmlFor="lastName">Last Name</label>
         <Field 
           type="text" 
           name='lastName'
         />
-        <ErrorMessage name='lastName'/>
+        <ErrorMessage component={TextError} name='lastName'/>
 
         <label htmlFor="email">Email</label>
         <Field 
           type="email" 
           name='email'
         />
-        <ErrorMessage name='email'/>
+        <ErrorMessage component={TextError} name='email'/>
           
         <label htmlFor="password">Password</label>
 
@@ -57,7 +58,7 @@ const SignUp = () => {
           type="password" 
           name='password'
         />
-        <ErrorMessage name='password'/>
+        <ErrorMessage component={TextError} name='password'/>
           
         <button type='submit'>submit</button>
       </Form>
