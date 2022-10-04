@@ -8,6 +8,8 @@
 <a href="https://github.com/jquense/yup" target="_blank"> <img src="https://scanskill.com/wp-content/uploads/2022/03/Form-validation-using-Formik-and-Yup-in-React.js.png" alt="html5" width="auto" height="40"/> </a><a href="https://formik.org/" target="_blank"> <img src="https://formik.org/images/formik-og.png" alt="css3" width="auto" height="40"/> </a>
 
 
+## here it's
+<img src='./src/assets/form.gif'/>
 
 
 [visit form](https://nidhisharma63.github.io/formik-tutorial/)
