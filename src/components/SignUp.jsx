@@ -34,8 +34,7 @@ const SignUp = () => {
         name='firstName'
         value={formik.values.firstName} 
         onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        />
+        onBlur={formik.handleBlur}/>
 
       {formik.touched.firstName && formik.errors.firstName && <div className='error'>{formik.errors.firstName}</div>}
 
@@ -46,8 +45,7 @@ const SignUp = () => {
         name='lastName'
         value={formik.values.lastName} 
         onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        />
+        onBlur={formik.handleBlur}/>
 
       {formik.touched.lastName && formik.errors.lastName && <div className='error'>{formik.errors.lastName}</div>}
       
@@ -58,8 +56,7 @@ const SignUp = () => {
         name='email'
         value={formik.values.email} 
         onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        />
+        onBlur={formik.handleBlur}/>
 
         {formik.touched.email && formik.errors.email && <div className='error'>{formik.errors.email}</div>}
         
@@ -70,8 +67,7 @@ const SignUp = () => {
         name='password'
         value={formik.values.password} 
         onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        />
+        onBlur={formik.handleBlur}/>
 
         {formik.touched.password && formik.errors.password && <div className='error'>{formik.errors.password}</div>}
         
